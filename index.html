@@ -8,7 +8,7 @@
 </head>
 <body>
 
-  <!-- 상단 네비게이션 (CASPIA 느낌) -->
+  <!-- 상단 네비게이션 -->
   <nav class="navbar">
     <div class="logo">JJJ.</div>
     <div class="nav-links">
@@ -18,19 +18,18 @@
     </div>
   </nav>
 
-  <!-- 히어로 섹션: 큼직한 이름과 사진 배치 -->
+  <!-- 히어로 섹션 -->
   <header class="hero">
     <div class="hero-content">
       <h1 class="hero-title">JO<br>JEONG<br>JIN</h1>
       <p class="hero-subtitle">Creative Developer & Semiconductor</p>
     </div>
-    <!-- 여기에 본인 사진을 넣으세요 (profile.jpg) -->
     <div class="hero-image-wrapper">
       <img src="https://png.pngtree.com/background/20230528/original/pngtree-small-animal-is-eating-some-sage-picture-image_2774379.jpg" alt="조정진 프로필" class="hero-img">
     </div>
   </header>
 
-  <!-- 소개 섹션 (좌우 배치) -->
+  <!-- 소개 섹션 -->
   <section id="about" class="section about-section">
     <div class="section-label">01 / ABOUT ME</div>
     <div class="section-content">
@@ -45,14 +44,14 @@
     </div>
   </section>
 
-  <!-- 관심분야 (그리드 배치) -->
+  <!-- 관심분야 -->
   <section id="interests" class="section">
     <div class="section-label">02 / INTERESTS</div>
     <div class="section-content">
       <h2>What I Love</h2>
       <div class="grid-cards">
         <div class="card">
-          <h3>Web Development</h3>
+          <h3>Web Development</h3> <!-- h2 다음 h3는 올바른 단계입니다. -->
           <p>HTML, CSS, PYTHON를 활용해 인터랙티브한 웹을 만듭니다.</p>
         </div>
         <div class="card">
@@ -67,7 +66,7 @@
     </div>
   </section>
 
-  <!-- 활동 (리스트 배치) -->
+  <!-- 활동 -->
   <section id="activity" class="section">
     <div class="section-label">03 / ACTIVITY</div>
     <div class="section-content">
@@ -89,23 +88,21 @@
     </div>
   </section>
 
-  <!-- 푸터 / 연락처 -->
+  <!-- 푸터 -->
   <footer class="footer">
     <div class="contact-info">
       <h2>Let's Connect</h2>
-      <a href="mailto:your-email@example.com">solalaaa1@naver.com</a>
+      <a href="mailto:solalaaa1@naver.com">solalaaa1@naver.com</a>
       <a href="https://github.com/Jin050310" target="_blank">GitHub</a>
     </div>
 
-    <!-- 👇 과제 통과를 위한 공개/비공개 정보 및 주소 명시 👇 -->
-    <div style="margin-top: 60px; padding-top: 20px; border-top: 1px solid #333; font-size: 0.85rem; color: #888; text-align: left; max-width: 600px; margin-left: auto; margin-right: auto;">
+    <!-- 👇 명암비 개선을 위해 글씨 색상을 #ccc로 밝게 변경 👇 -->
+    <div style="margin-top: 60px; padding-top: 20px; border-top: 1px solid #333; font-size: 0.85rem; color: #ccc; text-align: left; max-width: 600px; margin-left: auto; margin-right: auto;">
       <p><strong>[정보 공개 범위 안내]</strong></p>
       <p>공개 정보: 소개, 관심분야, 활동</p>
       <p>비공개 정보: 개인정보, 주소, 학교 주소</p>
-      <!-- 👇 페이지 주소 추가 -->
       <p style="margin-top: 15px;">페이지 주소: <a href="https://jin050310.github.io/VS-code-my-profile/" target="_blank" style="color: #ffdf00; text-decoration: none;">https://jin050310.github.io/VS-code-my-profile/</a></p>
     </div>
-    <!-- 👆 여기까지 👆 -->
 
     <p class="copyright">© 2026 Jo Jeong Jin. All rights reserved.</p>
   </footer>
