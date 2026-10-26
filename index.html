@@ -3,71 +3,98 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>조정진 | 조정진의 자기소개 페이지입니다. </title>
-  <meta name="description" content="홍길동의 자기소개 페이지입니다.">
+  <title>조정진 | Portfolio</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- ===== 소개 (Hero + About) ===== -->
+  <!-- 상단 네비게이션 (CASPIA 느낌) -->
+  <nav class="navbar">
+    <div class="logo">JJJ.</div>
+    <div class="nav-links">
+      <a href="#about">ABOUT</a>
+      <a href="#interests">INTERESTS</a>
+      <a href="#activity">ACTIVITY</a>
+    </div>
+  </nav>
+
+  <!-- 히어로 섹션: 큼직한 이름과 사진 배치 -->
   <header class="hero">
-    <img src="profile.jpg" alt="프로필 사진" class="profile-img">
-    <h1>조정진</h1>
-    <p class="tagline">꾸준히 성장하면 노력하는 학생입니다</p>
+    <div class="hero-content">
+      <h1 class="hero-title">JO<br>JEONG<br>JIN</h1>
+      <p class="hero-subtitle">Creative Developer & Designer</p>
+    </div>
+    <!-- 여기에 본인 사진을 넣으세요 (profile.jpg) -->
+    <div class="hero-image-wrapper">
+      <img src="profile.jpg" alt="조정진 프로필" class="hero-img">
+    </div>
   </header>
 
-  <section id="about" class="section">
-    <h2>소개</h2>
-    <p>
-      안녕하세요, 조정진입니다. 새로운 것을 배우고 만드는 것을 좋아하며,
+  <!-- 소개 섹션 (좌우 배치) -->
+  <section id="about" class="section about-section">
+    <div class="section-label">01 / ABOUT ME</div>
+    <div class="section-content">
+      <h2>안녕하세요,<br>조정진입니다.</h2>
+      <p>
+        안녕하세요, 조정진입니다. 새로운 것을 배우고 만드는 것을 좋아하며,
       저는 어떤 일이든 열정을 가지고 도전하며, 목표를 이루기 위해 꾸준히 노력하고, 맡은 일에 집중하여 끝까지 최선을 다하는 사람입니다.
-    </p>
-    <p>
-      ※ 상세 주소, 학교 주소, 개인정보는 이 페이지에 공개하지 않습니다.
-    </p>
+
+      </p>
+    </div>
   </section>
 
-  <!-- ===== 관심분야 ===== -->
+  <!-- 관심분야 (그리드 배치) -->
   <section id="interests" class="section">
-    <h2>관심분야</h2>
-    <ul class="card-list">
-      <li class="card">
-        <h3>웹 개발</h3>
-        <p>HTML, CSS, JavaScript로 인터랙티브한 웹을 만드는 것에 관심이 있습니다.</p>
-      </li>
-      <li class="card">
-        <h3>UI/UX 디자인</h3>
-        <p>사용자 입장에서 편리한 화면 설계를 고민합니다.</p>
-      </li>
-      <li class="card">
-        <h3>오픈소스</h3>
-        <p>오픈소스 프로젝트에 기여하며 함께 성장하는 것을 좋아합니다.</p>
-      </li>
-    </ul>
+    <div class="section-label">02 / INTERESTS</div>
+    <div class="section-content">
+      <h2>What I Love</h2>
+      <div class="grid-cards">
+        <div class="card">
+          <h3>Web Development</h3>
+          <p>HTML, CSS, JavaScript를 활용해 인터랙티브한 웹을 만듭니다.</p>
+        </div>
+        <div class="card">
+          <h3>UI/UX Design</h3>
+          <p>사용자 입장에서 가장 편리한 화면 흐름을 고민합니다.</p>
+        </div>
+        <div class="card">
+          <h3>Open Source</h3>
+          <p>함께 성장하는 오픈소스 생태계에 기여하고 싶습니다.</p>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <!-- ===== 활동 ===== -->
+  <!-- 활동 (리스트 배치) -->
   <section id="activity" class="section">
-    <h2>활동</h2>
-    <ul class="activity-list">
-      <li>
-        <strong>2025.03 ~</strong> 개인 블로그 운영
-      </li>
-      <li>
-        <strong>2024.09 ~ 2025.02</strong> 동아리/스터디 활동
-      </li>
-      <li>
-        <strong>2024.06</strong> 미니 프로젝트 완성 (자기소개 페이지)
-      </li>
-    </ul>
-    <p class="contact-line">
-      연락: <a href="mailto:me[at]example.com">me[at]example.com</a>
-      · <a href="https://github.com/username" target="_blank" rel="noopener">GitHub</a>
-    </p>
+    <div class="section-label">03 / ACTIVITY</div>
+    <div class="section-content">
+      <h2>Journey</h2>
+      <ul class="activity-list">
+        <li>
+          <span class="year">2025 - Present</span>
+          <span class="desc">개인 블로그 및 포트폴리오 운영</span>
+        </li>
+        <li>
+          <span class="year">2024 - 2025</span>
+          <span class="desc">웹 개발 동아리/스터디 활동</span>
+        </li>
+        <li>
+          <span class="year">2024</span>
+          <span class="desc">첫 미니 프로젝트 (자기소개 페이지) 완성</span>
+        </li>
+      </ul>
+    </div>
   </section>
 
+  <!-- 푸터 / 연락처 -->
   <footer class="footer">
-    <p>© 2026 홍길동. All rights reserved.</p>
+    <div class="contact-info">
+      <h2>Let's Connect</h2>
+      <a href="mailto:your-email@example.com">your-email@example.com</a>
+      <a href="https://github.com/Jin050310" target="_blank">GitHub</a>
+    </div>
+    <p class="copyright">© 2026 Jo Jeong Jin. All rights reserved.</p>
   </footer>
 
 </body>
