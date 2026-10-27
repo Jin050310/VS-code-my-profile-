@@ -1,158 +1,264 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Noto+Sans+KR:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Noto+Sans+KR:wght@400;700;900&display=swap');
 
-/* 기본 초기화 */
+/* 기본 초기화 (흑백 테마) */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-  background-color: #111;
-  color: #fff;
+  background-color: #e6e6e6; /* 연한 회색 배경 */
+  color: #111; /* 칠흑 같은 검은색 글씨 */
   font-family: 'Noto Sans KR', sans-serif;
-  line-height: 1.6;
-  overflow-x: hidden; /* [과제 3번] 가로 넘침 방지 */
+  line-height: 1.5;
+  overflow-x: hidden;
 }
 
-/* 상단 네비게이션 */
+/* 메인 컨테이너 (신문처럼 테두리로 감싸기) */
+body {
+  max-width: 1400px;
+  margin: 0 auto;
+  background-color: #f4f4f4;
+  border-left: 2px solid #111;
+  border-right: 2px solid #111;
+}
+
+/* 상단 네비게이션 (칸막이 형태) */
 .navbar {
-  position: fixed;
-  top: 0; left: 0; width: 100%;
   display: flex;
   justify-content: space-between;
-  padding: 20px 50px;
-  background: rgba(17, 17, 17, 0.9);
-  z-index: 100;
-  border-bottom: 1px solid #333;
+  border-bottom: 2px solid #111;
+  height: 60px;
 }
-.logo { font-family: 'Anton', sans-serif; font-size: 1.5rem; color: #ffdf00; }
+.logo {
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 1.5rem;
+  border-right: 2px solid #111;
+}
+.nav-links {
+  display: flex;
+  flex-grow: 1;
+}
 .nav-links a {
-  color: #fff; text-decoration: none; margin-left: 30px;
-  font-size: 0.9rem; font-weight: 700; letter-spacing: 1px;
-  transition: color 0.3s;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #111;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+  border-right: 2px solid #111;
+  transition: background 0.3s;
 }
-.nav-links a:hover { color: #ffdf00; }
+.nav-links a:last-child { border-right: none; }
+.nav-links a:hover { background: #111; color: #fff; }
 
-/* 히어로 섹션 */
+/* 히어로 섹션 (큼직한 타이틀) */
 .hero {
-  height: 70vh; /* [과제 3번] 높이 축소 */
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 0 10%; position: relative;
+  border-bottom: 2px solid #111;
 }
-.hero-content { z-index: 2; }
+.hero-content {
+  text-align: center;
+  padding: 40px 20px;
+  border-bottom: 2px solid #111;
+}
 .hero-title {
-  font-family: 'Anton', sans-serif; font-size: 10vw;
-  line-height: 0.9; color: #ffdf00; letter-spacing: -2px;
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 9vw; /* 화면 크기에 비례하여 엄청나게 크게 */
+  line-height: 0.85;
+  letter-spacing: -2px;
+  text-transform: uppercase;
 }
-.hero-subtitle { font-size: 1.2rem; color: #888; margin-top: 20px; letter-spacing: 2px; }
+.hero-subtitle {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-top: 20px;
+}
 
 /* 사진 영역 */
 .hero-image-wrapper {
-  width: 40%; height: 60vh; position: relative;
-  overflow: hidden; border: 1px solid #333;
+  width: 100%;
+  height: 50vh;
+  overflow: hidden;
+  border-bottom: 2px solid #111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ddd;
 }
 .hero-img {
-  width: 100%; height: 100%; object-fit: cover;
-  filter: grayscale(100%) contrast(1.2);
-  transition: filter 0.5s;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%) contrast(1.5); /* 완벽한 흑백 사진으로 변환 */
 }
-.hero-img:hover { filter: grayscale(0%) contrast(1); }
 
-/* 공통 섹션 */
+/* 공통 섹션 (테두리로 나누기) */
 .section {
-  padding: 60px 10%; /* [과제 3번] 여백 축소 */
-  border-top: 1px solid #222;
-  display: flex; gap: 50px;
-}
-.section-label {
-  width: 20%; font-size: 0.9rem; color: #ffdf00;
-  font-weight: 700; letter-spacing: 1px;
-}
-.section-content { width: 80%; }
-.section-content h2 {
-  font-size: 3rem; margin-bottom: 40px;
-  font-family: 'Anton', sans-serif; color: #fff;
+  display: flex;
+  border-bottom: 2px solid #111;
 }
 
-/* 소개 섹션 */
-.about-section p { font-size: 1.2rem; color: #aaa; max-width: 700px; }
+.section-label {
+  width: 25%;
+  padding: 30px 20px;
+  border-right: 2px solid #111;
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+.section-content {
+  width: 75%;
+  padding: 40px;
+}
+.section-content h2 {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 3rem;
+  margin-bottom: 30px;
+  line-height: 1.1;
+}
+
+/* 소개글 */
+.about-section p {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+.about-section p:first-of-type {
+  font-size: 1.5rem;
+  line-height: 1.4;
+}
+
+/* 관심분야 카드 (바둑판식 실선 그리드) */
+.grid-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 2px solid #111;
+}
+.card {
+  padding: 30px 20px;
+  border-right: 2px solid #111;
+  transition: background 0.3s, transform 0.3s;
+}
+.card:last-child { border-right: none; }
+.card h3 {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+.card p { font-size: 0.95rem; font-weight: 700; }
+
+/* [과제 기준] 마우스 및 키보드 상호작용 (반전 효과) */
+.card:hover, .card:focus-within {
+  background: #111;
+  color: #fff;
+  transform: translateY(-5px);
+}
+.card:hover h3, .card:focus-within h3 {
+  color: #fff;
+}
+
+/* 활동 리스트 (표 형태) */
+.activity-list { list-style: none; }
+.activity-list li {
+  display: flex;
+  padding: 20px 0;
+  border-bottom: 1px solid #111;
+  font-weight: 700;
+}
+.activity-list li:last-child { border-bottom: none; }
+.year {
+  width: 30%;
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 1.2rem;
+}
+.desc { font-size: 1.1rem; }
+
+/* 푸터 */
+.footer {
+  display: flex;
+  flex-direction: column;
+  border-top: 2px solid #111;
+}
+.contact-info {
+  display: flex;
+  border-bottom: 2px solid #111;
+}
+.contact-info h2 {
+  width: 50%;
+  padding: 40px;
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 4rem;
+  line-height: 1;
+  border-right: 2px solid #111;
+}
+.contact-info a {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #111;
+  font-size: 1.5rem;
+  font-weight: 900;
+  text-decoration: none;
+  border-bottom: 1px solid #111;
+}
+.contact-info a:last-child { border-bottom: none; }
+.contact-info a:hover { background: #111; color: #fff; }
+
+.footer-info {
+  padding: 20px 40px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  border-bottom: 2px solid #111;
+}
+.copyright {
+  padding: 20px 40px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
 
 /* =========================================
-   [과제 5번] 상호작용 (Interactions) 영역
+   [과제 통과용] 접근성 및 애니메이션 제어
    ========================================= */
 
-/* 관심분야 카드 기본 상태 */
-.card {
-  background: #1a1a1a;
-  padding: 40px 30px;
-  border: 1px solid #333;
-  /* 마우스 올리거나 키보드로 선택했을 때 부드럽게 변하도록 설정 */
-  transition: all 0.3s ease; 
+/* 명암비 개선 */
+.card p, .footer-info p { color: #111 !important; }
+
+/* Tab 키 초점(Focus) 테두리 (흑백 스타일이므로 굵은 검정/흰색 번갈아 표시) */
+a:focus, button:focus {
+  outline: 4px solid #111 !important;
+  outline-offset: -4px;
 }
 
-/* 1. 마우스 상호작용 (Hover) */
-.card:hover {
-  border-color: #ffdf00;
-  transform: translateY(-5px); /* 살짝 떠오르는 움직임 */
-  box-shadow: 0 10px 20px rgba(255, 223, 0, 0.1);
-}
-
-/* 2. 키보드 상호작용 (Focus) - Tab 키로 이동했을 때 */
-/* .card 안에 링크가 없더라도, 카드 자체에 tabindex를 주면 반응하게 만들 수 있습니다. 
-   여기서는 카드 내부의 링크(a)나 버튼에 포커스가 갈 때 카드 전체가 반응하도록 처리합니다. */
-.card:focus-within {
-  border-color: #ffdf00;
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(255, 223, 0, 0.1);
-  outline: none; /* 카드 자체의 기본 아웃라인 제거 (링크에 포커스 테두리가 생김) */
-}
-
-/* [과제 4번] 큰 움직임 줄이기 설정 (사용자가 OS에서 동작 줄이기를 켰을 때) */
+/* 사용자가 동작 줄이기를 켰을 때 애니메이션 끄기 */
 @media (prefers-reduced-motion: reduce) {
-  .card, .card:hover, .card:focus-within, .hero-img {
-    transition: none; /* 애니메이션(움직임) 끄기 */
+  .card, .card:hover, .card:focus-within {
+    transition: none;
     transform: none;
   }
 }
 
-/* =========================================
-   접근성 및 기타 스타일
-   ========================================= */
-
-.card h3 { font-size: 1.3rem; color: #ffdf00; margin-bottom: 15px; }
-.card p { color: #ccc; font-size: 0.95rem; }
-
-/* 활동 리스트 */
-.activity-list { list-style: none; }
-.activity-list li { display: flex; padding: 20px 0; border-bottom: 1px solid #333; }
-.year { width: 30%; font-family: 'Anton', sans-serif; color: #ffdf00; font-size: 1.2rem; }
-.desc { color: #ccc; font-size: 1.1rem; }
-
-/* 푸터 */
-.footer { padding: 100px 10% 50px; background: #0a0a0a; text-align: center; border-top: 1px solid #333; }
-.footer h2 { font-family: 'Anton', sans-serif; font-size: 4rem; color: #ffdf00; margin-bottom: 30px; }
-.contact-info a {
-  display: inline-block; color: #fff; text-decoration: none; font-size: 1.2rem;
-  margin: 10px 20px; border-bottom: 1px solid #555; padding-bottom: 5px; transition: all 0.3s;
-}
-.contact-info a:hover { color: #ffdf00; border-color: #ffdf00; }
-.copyright { margin-top: 80px; color: #555; font-size: 0.9rem; }
-
-/* 명암비 개선 및 Tab 키 테두리 */
-.footer div[style*="color: #ccc"] p { color: #ccc !important; }
-a:focus, button:focus {
-  outline: 3px solid #ffdf00 !important;
-  outline-offset: 4px;
-  border-radius: 4px;
-}
-
-/* 모바일 화면 대응 */
+/* 모바일 반응형 */
 @media (max-width: 900px) {
-  .hero { flex-direction: column; justify-content: center; text-align: center; padding-top: 100px; height: auto; }
-  .hero-image-wrapper { width: 80%; height: 40vh; margin-top: 40px; }
-  .section { flex-direction: column; gap: 20px; padding: 80px 5%; }
-  .section-label { width: 100%; }
-  .section-content { width: 100%; }
+  .navbar { flex-direction: column; height: auto; }
+  .logo { width: 100%; border-right: none; border-bottom: 2px solid #111; padding: 15px; }
+  .nav-links { flex-direction: column; }
+  .nav-links a { border-right: none; border-bottom: 1px solid #111; padding: 15px; }
+  
+  .hero-title { font-size: 18vw; }
+  
+  .section { flex-direction: column; }
+  .section-label { width: 100%; border-right: none; border-bottom: 2px solid #111; }
+  .section-content { width: 100%; padding: 20px; }
+  
   .grid-cards { grid-template-columns: 1fr; }
-  .activity-list li { flex-direction: column; }
-  .year { width: 100%; margin-bottom: 5px; }
-  .navbar { padding: 15px 20px; }
-  .nav-links { display: none; }
+  .card { border-right: none; border-bottom: 2px solid #111; }
+  .card:last-child { border-bottom: none; }
+  
+  .contact-info { flex-direction: column; }
+  .contact-info h2 { width: 100%; border-right: none; border-bottom: 2px solid #111; font-size: 3rem; }
 }
